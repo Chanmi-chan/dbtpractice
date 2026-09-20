@@ -1,0 +1,40 @@
+version: 2
+
+models:
+  - name: fct_orders
+    columns:
+      - name: order_id
+        data_tests:
+          - unique
+          - not_null
+
+      - name: customer_id
+        data_tests:
+          - not_null
+
+      - name: order_date
+        data_tests:
+          - not_null
+
+      - name: status
+        data_tests:
+          - not_null
+
+      - name: amount
+        data_tests:
+          - not_null
+
+  - name: fct_customer_summary
+    columns:
+      - name: customer_id
+        data_tests:
+          - unique
+          - not_null
+
+      - name: total_orders
+        data_tests:
+          - not_null
+        
+      - name: total_spend
+        data_tests:
+          - not_null
